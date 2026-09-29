@@ -365,6 +365,38 @@ Los flujos principales fueron comprobados directamente en la aplicación y el en
 
 La IA fue utilizada como herramienta de apoyo durante el desarrollo y no como sustituto de la validación del funcionamiento de la aplicación.
 
+## Pruebas automatizadas
+
+El backend incluye pruebas automatizadas desarrolladas con **Vitest** y **Supertest**.
+
+Actualmente se validan los siguientes escenarios:
+
+- Disponibilidad de la API mediante `GET /api/health`.
+- Procesamiento exitoso de una transacción con SnailPay.
+- Rechazo de una transacción cuando los datos de la tarjeta no son válidos.
+
+Para ejecutar las pruebas:
+
+```bash
+cd backend
+npm test
+```
+
+Resultado esperado:
+
+```text
+Test Files  1 passed (1)
+Tests       3 passed (3)
+```
+
+También puede comprobarse que el backend compile correctamente mediante:
+
+```bash
+npm run build
+```
+
+Las pruebas fueron ejecutadas localmente y los tres casos implementados finalizaron correctamente.
+
 ## Posibles mejoras
 
 Con más tiempo se podrían incorporar:
@@ -372,7 +404,6 @@ Con más tiempo se podrían incorporar:
 - Base de datos.
 - Autenticación mediante backend.
 - Tokens de sesión.
-- Pruebas automatizadas.
 - Historial de transacciones.
 - Historial de apuestas.
 - Variables de entorno para las URLs de servicios.
